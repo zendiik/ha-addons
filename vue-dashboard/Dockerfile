@@ -1,5 +1,5 @@
-ARG BUILD_FROM
-ARG BUILD_VERSION
+ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
+ARG BUILD_VERSION=1.0.0
 
 ###################
 # Stage 1: Builder
@@ -51,7 +51,7 @@ COPY nginx/nginx-main.conf /etc/nginx/nginx.conf
 COPY nginx/nginx.conf /etc/nginx/http.d/default.conf
 
 # Create necessary directories and set permissions
-RUN mkdir -p /var/run/nginx /var/log/nginx \
+RUN mkdir -p /var/run/nginx /var/log/nginx /var/cache/nginx \
     && chown -R nginx:nginx /var/www/html \
     && chown -R nginx:nginx /var/cache/nginx \
     && chown -R nginx:nginx /var/run/nginx \
