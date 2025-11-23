@@ -19,8 +19,8 @@ WORKDIR /app
 # Copy package files
 COPY frontend/package*.json ./
 
-# Install dependencies
-RUN npm ci --omit=dev
+# Install all dependencies (including devDependencies for build)
+RUN npm ci
 
 # Copy source code
 COPY frontend/ ./
