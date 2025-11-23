@@ -45,14 +45,6 @@ async function initApp() {
     app.use(pinia)
     app.use(router)
 
-    // Apply theme from config
-    const isDark = config.theme === 'dark' ||
-                   (config.theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)
-
-    if (isDark) {
-      document.documentElement.classList.add('dark')
-    }
-
     app.mount('#app')
 
     console.log('Vue Dashboard initialized successfully')
