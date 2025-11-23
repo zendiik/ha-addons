@@ -12,7 +12,7 @@ Multi-addon repository pro vlastní Home Assistant addony.
 2. Přejdi do **Settings** → **Add-ons** → **Add-on Store**
 3. Klikni na tři tečky v pravém horním rohu
 4. Vyber **Repositories**
-5. Přidej tuto URL: `https://github.com/your-username/ha-addons`
+5. Přidej tuto URL: `https://github.com/zendiik/ha-addons`
 6. Klikni **Add**
 
 ## Addony
@@ -43,6 +43,16 @@ addon-name/
 ├── README.md         # Developer dokumentace
 └── DOCS.md          # User dokumentace
 ```
+
+### Automatické buildování
+
+Docker images se automaticky buildují a publikují na GitHub Container Registry pomocí GitHub Actions:
+
+- **Trigger**: Push do `main` branch nebo release
+- **Registry**: `ghcr.io/zendiik/amd64-addon-vue-dashboard`
+- **Workflow**: `.github/workflows/build-addon.yml`
+
+Pro ruční spuštění buildu použij "Run workflow" v Actions tabu na GitHubu.
 
 ## Licence
 

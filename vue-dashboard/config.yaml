@@ -4,7 +4,7 @@ slug: "vue-dashboard-panel"
 description: "Modern Vue 3 dashboard with glass morphism design, integrated into Home Assistant sidebar"
 arch:
   - amd64
-url: "https://github.com/your-username/ha-vue-dashboard"
+url: "https://github.com/zendiik/ha-addons"
 stage: experimental
 init: false
 
@@ -36,4 +36,4 @@ schema:
   refresh_interval: "int(5,300)"
 
 # Optional image configuration
-image: "ghcr.io/{arch}-addon-vue-dashboard"
+image: "ghcr.io/zendiik/{arch}-addon-vue-dashboard"
