@@ -1,0 +1,39 @@
+name: "Vue Dashboard Panel"
+version: "1.0.0"
+slug: "vue-dashboard-panel"
+description: "Modern Vue 3 dashboard with glass morphism design, integrated into Home Assistant sidebar"
+arch:
+  - amd64
+url: "https://github.com/your-username/ha-vue-dashboard"
+stage: experimental
+init: false
+
+# Ingress configuration - embeds dashboard into HA sidebar
+ingress: true
+ingress_port: 8080
+ingress_entry: "/"
+panel_icon: "mdi:view-dashboard-variant"
+panel_title: "Dashboard"
+panel_admin: false
+
+# Startup configuration
+startup: services
+boot: auto
+
+# Home Assistant API access
+homeassistant_api: true
+hassio_api: false
+auth_api: false
+
+# User configuration options
+options:
+  theme: "auto"
+  refresh_interval: 30
+
+# Configuration schema
+schema:
+  theme: "list(auto|light|dark)"
+  refresh_interval: "int(5,300)"
+
+# Optional image configuration
+image: "ghcr.io/{arch}-addon-vue-dashboard"

@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --glass-bg-light: rgba(255, 255, 255, 0.1);
+    --glass-border-light: rgba(255, 255, 255, 0.2);
+    --glass-bg-dark: rgba(0, 0, 0, 0.3);
+    --glass-border-dark: rgba(255, 255, 255, 0.1);
+
+    --neuro-bg: #e0e5ec;
+    --neuro-shadow-1: #a3b1c6;
+    --neuro-shadow-2: #ffffff;
+  }
+
+  .dark {
+    --neuro-bg: #1a1a2e;
+    --neuro-shadow-1: #0f0f1a;
+    --neuro-shadow-2: #25253e;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800;
+    @apply text-gray-900 dark:text-gray-100;
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md bg-white/10 dark:bg-black/30;
+    @apply border border-white/20 dark:border-white/10;
+    @apply rounded-2xl shadow-glass;
+    @apply transition-all duration-300;
+  }
+
+  .glass-card-hover {
+    @apply hover:bg-white/20 dark:hover:bg-black/40;
+    @apply hover:shadow-xl hover:scale-105;
+  }
+
+  .neuro-card {
+    @apply bg-neuro-light-base dark:bg-neuro-dark-base;
+    @apply shadow-neuro-light dark:shadow-neuro-dark;
+    @apply rounded-2xl;
+    @apply transition-all duration-300;
+  }
+
+  .neuro-button {
+    @apply bg-neuro-light-base dark:bg-neuro-dark-base;
+    @apply shadow-neuro-light dark:shadow-neuro-dark;
+    @apply rounded-xl px-6 py-3 font-medium;
+    @apply transition-all duration-200;
+    @apply hover:shadow-neuro-light-inset dark:hover:shadow-neuro-dark-inset;
+    @apply active:shadow-neuro-light-inset dark:active:shadow-neuro-dark-inset;
+  }
+
+  .status-indicator {
+    @apply w-3 h-3 rounded-full animate-pulse;
+  }
+
+  .status-online {
+    @apply bg-status-online;
+  }
+
+  .status-offline {
+    @apply bg-status-offline;
+  }
+
+  .status-warning {
+    @apply bg-status-warning;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
